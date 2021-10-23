@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linked</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+      :root {
+        --header-height: 3rem;
+        --first-color-darken: #1d1d1d;
+        --dark-color: #000;
+        --white-color: #fff;
+
+        --body-font: "Poppins", sans-serif;
+        --big-font-size: 2rem;
+        --normal-font-size: 0.938rem;
+
+        --z-fixed: 100;
+      }
+
+      @media screen and (min-width: 768px) {
+        :root {
+          --big-font-size: 3rem;
+          --normal-font-size: 1.5rem;
+        }
+      }
+
+      *,
+      ::before,
+      ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        background: var(--white-color);
+        font-weight: 400;
+      }
+
+      h1,
+      p,
+      ul {
+        margin: 0;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .main {
+        max-width: 442px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .grid__left {
+        margin-bottom: 30px;
+        padding: 16px;
+      }
+
+      /* 
+============================================= BASE ===============================*/
+      .main {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        padding: 1rem;
+      }
+      p.description {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 60px;
+        text-transform: capitalize;
+      }
+
+      .link__icon {
+        width: 36px;
+        height: auto;
+        margin-right: 8px;
+      }
+
+      .grid__right > div {
+        background: #f5f5f5;
+        border-radius: 60px;
+        padding: 40px 40px;
+      }
+
+      .link__item {
+        max-width: 724px;
+      }
+
+      .link__item a {
+        box-shadow: 0px 38.4869px 71.4756px rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+        padding: 11px 20px;
+        margin: 20px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        position: relative;
+        outline: none;
+        color: #ffffff;
+        overflow: hidden;
+      }
+
+      .link__item.website a {
+        background: #000000;
+      }
+
+      .link__item.youtube a {
+        background: #bb2e02;
+      }
+
+      .link__item.instagram a {
+        background: #3835a5;
+      }
+
+      .link__item.telegram a {
+        background: #1282b5;
+      }
+
+      .animated-button {
+        position: relative;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px 50px;
+        margin: 10px;
+        border-radius: 40px;
+        overflow: hidden;
+      }
+
+      span {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background: #ffff;
+        pointer-events: none;
+        border-radius: 50%;
+        animation: animate 1s linear infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          width: 0;
+          height: 0;
+          opacity: 0.2;
+        }
+        100% {
+          width: 500px;
+          height: 500px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main flex">
+      <div class="grid__left">
+        <div class="logo">HubCrag</div>
+        <p class="description">Our social media buttons</p>
+      </div>
+      <div class="grid__right">
+        <div>
+          <div class="social__links">
+            <div class="link__item website">
+              <a href="#" class="animated-button"
+                ><img
+                  src="img/website.svg"
+                  alt="Visit WebSite"
+                  class="link__icon"
+                />
+                Visit WebSite</a
+              >
+            </div>
+            <div class="link__item youtube">
+              <a href="#" class="animated-button"
+                ><img
+                  src="img/youtube.svg"
+                  alt="Visit YouTube"
+                  class="link__icon"
+                />
+                Visit YouTube</a
+              >
+            </div>
+            <div class="link__item instagram">
+              <a href="#" class="animated-button"
+                ><img
+                  src="img/instagram.svg"
+                  alt="Visit Instagram"
+                  class="link__icon"
+                />
+                Visit Instagram</a
+              >
+            </div>
+            <div class="link__item telegram">
+              <a href="#" class="animated-button"
+                ><img
+                  src="img/telegram.svg"
+                  alt="Visit Telegram"
+                  class="link__icon"
+                />
+                Visit Telegram</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const buttons = document.querySelectorAll(".animated-button");
+      buttons.forEach((btn) => {
+        btn.addEventListener("mouseenter", function (e) {
+          let x = e.clientX - e.target.offsetLeft;
+          let y = e.clientY - e.target.offsetTop;
+
+          let ripples = document.createElement("span");
+          ripples.style.left = x + "px";
+          ripples.style.top = y + "px";
+          this.appendChild(ripples);
+
+          setTimeout(() => {
+            ripples.remove();
+          }, 1000);
+        });
+      });
+    </script>
+  </body>
+</html>

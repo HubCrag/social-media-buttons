@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --header-height: 3rem;
+
+  --first-color: #27ae60;
+  --first-color-dark: #27ae60;
+  --first-color-darken: #1d1d1d;
+  --dark-color: #000;
+  --white-color: #fff;
+
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --normal-font-size: 0.938rem;
+
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --big-font-size: 3rem;
+    --normal-font-size: 1.5rem;
+  }
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background: var(--white-color);
+  font-weight: 400;
+}
+
+h1,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.main {
+  max-width: 442px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.flex{
+    display: flex;
+}
+
+.grid__left {
+    margin-bottom: 30px;
+    padding: 16px;
+}
+
+/* 
+============================================= BASE ===============================*/
+.main{
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+}
+p.description {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 60px;
+    text-transform: capitalize;
+}
+
+
+.link__icon {
+    width: 36px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.grid__right > div {
+    background: #F5F5F5;
+    border-radius: 60px;
+    padding: 40px 40px;
+}
+
+.link__item {
+    max-width: 724px;
+}
+
+.link__item a {
+    box-shadow: 0px 38.4869px 71.4756px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    padding: 11px 20px;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    position: relative;
+    outline: none;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.link__item.website a {
+    background: #000000;
+}
+
+.link__item.youtube a {
+    background: #bb2e02;
+}
+
+.link__item.instagram a {
+    background: #3835a5;
+}
+
+.link__item.telegram a {
+    background: #1282b5;
+}
+
+.animated-button {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 50px;
+    margin: 10px;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+  
+  span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: #ffff;
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0.2;
+    }
+    100% {
+      width: 500px;
+      height: 500px;
+      opacity: 0;
+    }
+  }
